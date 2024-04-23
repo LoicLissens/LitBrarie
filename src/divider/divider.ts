@@ -4,8 +4,8 @@ import { TailwindElement } from '../base/tw'
 
 const elementStyle = css`
 `
-@customElement('m-divide')
-export class MDivide extends TailwindElement(elementStyle) {
+@customElement('lb-divide')
+export class LBDivide extends TailwindElement(elementStyle) {
   render() {
     return html`<div class="border-b border-gray-200"></div>`
   }
@@ -13,6 +13,6 @@ export class MDivide extends TailwindElement(elementStyle) {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'm-divide': MDivide
+    'lb-divide': LBDivide
   }
 }

@@ -1,4 +1,6 @@
-import { MButton } from "./button/button";
-import { MDivide } from "./divider/divider";
-export { MButton, MDivide }
-console.log(MDivide);
+import {LBButton } from "./button/button";
+import { LBDivide } from "./divider/divider";
+import {LBNeuomorphicCheckbox} from "./inputs/checkboxes/neuomorphic-checkbox";
+
+
+export { LBButton, LBDivide,LBNeuomorphicCheckbox }

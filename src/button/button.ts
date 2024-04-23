@@ -2,10 +2,9 @@ import { css, html, } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { TailwindElement } from '../base/tw'
 
-const elementStyle = css`
-`
-@customElement('m-button')
-export class MButton extends TailwindElement(elementStyle) {
+const elementStyle = css``
+@customElement('lb-button')
+export class LBButton extends TailwindElement(elementStyle) {
 
   @property({ type: Number })
   count = 0
@@ -31,6 +30,6 @@ export class MButton extends TailwindElement(elementStyle) {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'm-button': MButton
+    'lb-button': LBButton
   }
 }
