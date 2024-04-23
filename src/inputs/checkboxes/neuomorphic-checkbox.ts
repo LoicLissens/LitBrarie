@@ -4,7 +4,7 @@ import { TailwindElement } from '../../base/tw'
 
 const elementStyle = css``
 
-
+//TODO add the possibilities to pass custom icon via slot
 @customElement('lb-neuomorphic-checkbox')
 export class LBNeuomorphicCheckbox extends TailwindElement(elementStyle) {
 
@@ -16,7 +16,6 @@ export class LBNeuomorphicCheckbox extends TailwindElement(elementStyle) {
 
     @property({type: HTMLElement})
     icon = null
-
     // Works well with Icon from https://heroicons.com
     static defaultIcon: TemplateResult = html`
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -35,7 +34,6 @@ export class LBNeuomorphicCheckbox extends TailwindElement(elementStyle) {
     }
 
     private _handleCheckboxChange(e) {
-        console.log(e.target.value);
         const wrapper = this.shadowRoot!.getElementById('wrapper') as HTMLElement;
         if (e.target.checked) {
             wrapper!.style.boxShadow = 'inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.1)';
