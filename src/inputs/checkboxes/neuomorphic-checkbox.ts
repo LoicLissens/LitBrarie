@@ -11,9 +11,15 @@ export class LBNeuomorphicCheckbox extends TailwindElement(elementStyle) {
     name = "";
 
     @property({type: String})
-    value = "value"
+    value = ""
 
+    @property({type: String})
+    color = "rgb(219 234 254)" //blue-100
 
+    @property({type: String})
+    iconcolor = "rgb(96 165 250)" // blue-400
+
+     // lol = "rgba(255, 255, 255, 1)"
     // Works well with Icon from https://heroicons.com
     static defaultIcon: TemplateResult = html`
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -24,7 +30,7 @@ export class LBNeuomorphicCheckbox extends TailwindElement(elementStyle) {
         return html`
         <label class="relative cursor-pointer inline-block">
             <input type="checkbox" name=${this.name} value=${this.value} class="absolute opacity-0" @change=${this._handleCheckboxChange}>
-            <div id="wrapper" class="w-14 h-14 bg-blue-100 flex justify-center items-center shadow-md rounded-lg text-blue-400 p-3">
+            <div id="wrapper" class="w-14 h-14 flex justify-center items-center shadow-md rounded-lg p-3" style="background-color: ${this.color}; color: ${this.iconcolor}">
                 <slot>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
@@ -36,6 +42,8 @@ export class LBNeuomorphicCheckbox extends TailwindElement(elementStyle) {
     }
 
     private _handleCheckboxChange(e) {
+        console.log(this.iconcolor);
+
         const wrapper = this.shadowRoot!.getElementById('wrapper') as HTMLElement;
         if (e.target.checked) {
             wrapper!.style.boxShadow = 'inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.1)';
