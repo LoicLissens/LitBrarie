@@ -19,7 +19,6 @@ export class LBNeuomorphicCheckbox extends TailwindElement(elementStyle) {
     @property({type: String})
     iconcolor = "rgb(96 165 250)" // blue-400
 
-     // lol = "rgba(255, 255, 255, 1)"
     // Works well with Icon from https://heroicons.com
     static defaultIcon: TemplateResult = html`
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
